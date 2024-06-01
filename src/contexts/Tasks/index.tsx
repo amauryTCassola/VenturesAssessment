@@ -2,7 +2,7 @@ import { Operation } from '@/enums/operation';
 import { TaskStatus } from '@/enums/taskStatus';
 import Task from '@/interfaces/task';
 import { fetchTask, submitTask } from '@/services/Tasks';
-import React, { PropsWithChildren, createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import React, { PropsWithChildren, createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 export interface TasksProviderInterface {
   tasks: Task[];
@@ -53,7 +53,7 @@ export const TasksProvider: React.FC<PropsWithChildren> = ({ children }) => {
       .then((data: Task) => {
         let newTask = data;
         newTask.status = TaskStatus.pending;
-        setTasks((previous) => previous.concat(newTask))
+        setTasks((previous) => previous.concat(newTask));
       })
   }
 
